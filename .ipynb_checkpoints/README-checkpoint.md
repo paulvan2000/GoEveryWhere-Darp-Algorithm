@@ -120,8 +120,6 @@ The solution also generates interactive Folium maps (HTML files) showing each ve
         width="1000" height="600">
 </iframe>
 
-Adjust the filename, width, and height as needed. In GitHub's Markdown, iframes are often **not** allowed in `.md` files, but you can do this in an HTML file or a Jupyter notebook.
-
 
 4\. How to Run
 --------------
