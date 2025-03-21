@@ -73,7 +73,7 @@ Below is the raw table of results (distance in miles, sim_time in minutes):
 
 **Total Distance vs. Scenario** (left) and **Simulation Time vs. Scenario** (right):
 
-![Grouped Bar Chart](grouped_comparison.png)
+![Grouped Bar Chart](./Algorithms/grouped_comparison.png)
 
 -   The scenario with 30 requests and region size 0.2 has the highest distance/time (as expected).
 -   The smallest scenario (10 requests, 2 vehicles, region size 0.05) is the most compact.
@@ -91,10 +91,10 @@ The code also generates extra charts for deeper insights:
 For example:
 
 -   **Load Over Route Order**\
-    ![Load Over Route Order](load_over_route.png)
+    ![Load Over Route Order](./Algorithms/load_over_route.png)
 
 -   **Distribution of Route Segment Distances**\
-    ![Segment Distance Histogram](segment_distance_hist.png)
+    ![Segment Distance Histogram](./Algorithms/segment_distance_hist.png)
 
 -   **Accessibility Demand vs. Supply**\
     ![Accessibility Demand vs Supply](./Algorithms/accessibility_demand_vs_supply.png)
@@ -113,16 +113,12 @@ The solution also generates interactive Folium maps (HTML files) showing each ve
 
 **Example**:
 
-`<!-- routes_Req20_Veh4_Reg0.1_20250321_100928.html -->`
-
 ### Embedding Maps with IFrames
 
-If you want to embed these map files directly in your README (or an HTML report), you can do something like:
-
-`<h2>Routes for Req20_Veh4_Reg0.1</h2>
+<h2>Routes for Req20_Veh4_Reg0.1</h2>
 <iframe src="Maps/routes_Req20_Veh4_Reg0.1_20250321_100928.html"
         width="1000" height="600">
-</iframe>`
+</iframe>
 
 Adjust the filename, width, and height as needed. In GitHub's Markdown, iframes are often **not** allowed in `.md` files, but you can do this in an HTML file or a Jupyter notebook.
 
@@ -157,8 +153,8 @@ Adjust the filename, width, and height as needed. In GitHub's Markdown, iframes 
 6\. License & Contact
 ---------------------
 
--   **License**: [MIT] or your preferred license
--   **Author**: You
--   **Contact**: Email or GitHub link
+-   **License**: [MIT]
+-   **Author**: Paul VanMetre
+-   **Contact**: pvanmetre2018@fau.edu
 
 Feel free to reach out with any questions or suggestions!
