@@ -97,7 +97,7 @@ For example:
     ![Segment Distance Histogram](segment_distance_hist.png)
 
 -   **Accessibility Demand vs. Supply**\
-    ![Accessibility Demand vs Supply](accessibility_demand_vs_supply.png)
+    ![Accessibility Demand vs Supply](./Algorithms/accessibility_demand_vs_supply.png)
 
 These charts let us see how balanced the routes are, how far each vehicle travels, and whether the algorithm has enough bike/wheelchair-capable vehicles to meet demand.
 
