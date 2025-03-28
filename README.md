@@ -43,8 +43,6 @@ Our analysis includes several charts:
 
 -   **Load Over Route Order:** Illustrates how each vehicle's passenger load changes at each stop.
 
-In addition, our Folium maps display the computed routes and, where possible, include turn‑by‑turn directions extracted via OSMnx (with a fallback to straight‑line paths if no route is found).
-
 How to Reproduce
 ----------------
 
