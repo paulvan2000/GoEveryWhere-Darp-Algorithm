@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_7e51c3edaccbe395ef3de5800f46f9d9 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_7e51c3edaccbe395ef3de5800f46f9d9" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_7e51c3edaccbe395ef3de5800f46f9d9 = L.map(
+                "map_7e51c3edaccbe395ef3de5800f46f9d9",
+                {
+                    center: [30.1897, -82.6393],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 10,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_7f17607318e2ae448c4c915600b4c221 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_7f17607318e2ae448c4c915600b4c221.addTo(map_7e51c3edaccbe395ef3de5800f46f9d9);
+        
+    
+            var poly_line_3495e16ba9f5dcfece90dbc6e1d11e25 = L.polyline(
+                [[30.1897, -82.6393]],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_7e51c3edaccbe395ef3de5800f46f9d9);
+        
+    
+            var marker_44a51b4ef3ac54d01ed669a3d16324b7 = L.marker(
+                [30.18975, -82.63925],
+                {}
+            ).addTo(map_7e51c3edaccbe395ef3de5800f46f9d9);
+        
+    
+            var div_icon_750d48642f369cd98ac0d57288e2e499 = L.divIcon({"className": "empty", "html": "\n                    \u003cdiv style=\"font-size: 10pt; \n                                color: white; \n                                background-color: red; \n                                opacity: 0.8;\n                                border: 1px solid black; \n                                border-radius: 4px;\n                                padding: 2px;\"\u003e\n                        Bus #0, Stop #1, Depot Depot\n                    \u003c/div\u003e\n                    ", "iconAnchor": [0, 0], "iconSize": [250, 36]});
+            marker_44a51b4ef3ac54d01ed669a3d16324b7.setIcon(div_icon_750d48642f369cd98ac0d57288e2e499);
+        
+    
+            var poly_line_7753acde358175656c2c039fc4f1092a = L.polyline(
+                [[30.1897, -82.6393], [30.190729586897245, -82.640095355889], [30.212290226412698, -82.68859515511822], [30.187644485296254, -82.684142106414], [30.172635343775223, -82.67631099850327], [30.14109622183459, -82.65216516795877], [30.141822141848728, -82.65050628360758], [30.146397603050172, -82.64966900435093], [30.15387046707516, -82.62964800688009], [30.15270106931646, -82.60791900241534], [30.1452405701574, -82.59788465338204], [30.163377207745544, -82.59410869511115], [30.177361967796177, -82.59360663825385], [30.215075856509092, -82.59028610957647], [30.23239008678326, -82.5979292537044], [30.238704544786486, -82.6044491635824], [30.234344384057426, -82.60880592626786], [30.22291397775954, -82.60003111938614], [30.212929852850465, -82.59607734609854], [30.170077418541876, -82.62782515283612], [30.190289032898676, -82.67647466538268]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_7e51c3edaccbe395ef3de5800f46f9d9);
+        
+    
+            var marker_e7cc4cc9bb3d6aaace253cdea9889787 = L.marker(
+                [30.18975, -82.63925],
+                {}
+            ).addTo(map_7e51c3edaccbe395ef3de5800f46f9d9);
+        
+    
+            var div_icon_3294d14df8217091664f1d53fc00ec0c = L.divIcon({"className": "empty", "html": "\n                    \u003cdiv style=\"font-size: 10pt; \n                                color: white; \n                                background-color: blue; \n                                opacity: 0.8;\n                                border: 1px solid black; \n                                border-radius: 4px;\n                                padding: 2px;\"\u003e\n                        Bus #1, Stop #1, Depot Depot\n                    \u003c/div\u003e\n                    ", "iconAnchor": [0, 0], "iconSize": [250, 36]});
+            marker_e7cc4cc9bb3d6aaace253cdea9889787.setIcon(div_icon_3294d14df8217091664f1d53fc00ec0c);
+        
+    
+            var marker_dfa6e75aab4ef6270897788d88237e5d = L.marker(
+                [30.190779586897246, -82.640045355889],
+                {}
+            ).addTo(map_7e51c3edaccbe395ef3de5800f46f9d9);
+        
+    
+            var div_icon_0b1af3d826a8e83b4f7a4afd8c7198ae = L.divIcon({"className": "empty", "html": "\n                    \u003cdiv style=\"font-size: 10pt; \n                                color: white; \n                                background-color: blue; \n                                opacity: 0.8;\n                                border: 1px solid black; \n                                border-radius: 4px;\n                                padding: 2px;\"\u003e\n                        Bus #1, Stop #2, Pickup R5 \ud83d\udeb2 \u267f\n                    \u003c/div\u003e\n                    ", "iconAnchor": [0, 0], "iconSize": [250, 36]});
+            marker_dfa6e75aab4ef6270897788d88237e5d.setIcon(div_icon_0b1af3d826a8e83b4f7a4afd8c7198ae);
+        
+    
+            var marker_4c09734ec766b38ae81c3ab8696852e9 = L.marker(
+                [30.2123402264127, -82.68854515511822],
+                {}
+            ).addTo(map_7e51c3edaccbe395ef3de5800f46f9d9);
+        
+    
+            var div_icon_c25a587fae1c58e602f0a2423f76bcc2 = L.divIcon({"className": "empty", "html": "\n                    \u003cdiv style=\"font-size: 10pt; \n                                color: white; \n                                background-color: blue; \n                                opacity: 0.8;\n                                border: 1px solid black; \n                                border-radius: 4px;\n                                padding: 2px;\"\u003e\n                        Bus #1, Stop #3, Pickup R8 \u267f\n                    \u003c/div\u003e\n                    ", "iconAnchor": [0, 0], "iconSize": [250, 36]});
+            marker_4c09734ec766b38ae81c3ab8696852e9.setIcon(div_icon_c25a587fae1c58e602f0a2423f76bcc2);
+        
+    
+            var marker_d63551d25f0bf328ff5bdab44368676d = L.marker(
+                [30.187694485296255, -82.684092106414],
+                {}
+            ).addTo(map_7e51c3edaccbe395ef3de5800f46f9d9);
+        
+    
+            var div_icon_a1cd7b11c5f723401e8e90b8871ac95b = L.divIcon({"className": "empty", "html": "\n                    \u003cdiv style=\"font-size: 10pt; \n                                color: white; \n                                background-color: blue; \n                                opacity: 0.8;\n                                border: 1px solid black; \n                                border-radius: 4px;\n                                padding: 2px;\"\u003e\n                        Bus #1, Stop #4, Pickup R2 \ud83d\udeb2 \u267f\n                    \u003c/div\u003e\n                    ", "iconAnchor": [0, 0], "iconSize": [250, 36]});
+            marker_d63551d25f0bf328ff5bdab44368676d.setIcon(div_icon_a1cd7b11c5f723401e8e90b8871ac95b);
+        
+    
+            var marker_ba1f5b2f3f5be291177b677adf3b67aa = L.marker(
+                [30.172685343775225, -82.67626099850327],
+                {}
+            ).addTo(map_7e51c3edaccbe395ef3de5800f46f9d9);
+        
+    
+            var div_icon_ffe85dc7abcb12c2e045ff3d6df088c9 = L.divIcon({"className": "empty", "html": "\n                    \u003cdiv style=\"font-size: 10pt; \n                                color: white; \n                                background-color: blue; \n                                opacity: 0.8;\n                                border: 1px solid black; \n                                border-radius: 4px;\n                                padding: 2px;\"\u003e\n                        Bus #1, Stop #5, Pickup R4 \ud83d\udeb2\n                    \u003c/div\u003e\n                    ", "iconAnchor": [0, 0], "iconSize": [250, 36]});
+            marker_ba1f5b2f3f5be291177b677adf3b67aa.setIcon(div_icon_ffe85dc7abcb12c2e045ff3d6df088c9);
+        
+    
+            var marker_639e1dfafd74b97b701a81803da2070c = L.marker(
+                [30.141146221834592, -82.65211516795877],
+                {}
+            ).addTo(map_7e51c3edaccbe395ef3de5800f46f9d9);
+        
+    
+            var div_icon_402fbc004405fd2442bbf438e48b3337 = L.divIcon({"className": "empty", "html": "\n                    \u003cdiv style=\"font-size: 10pt; \n                                color: white; \n                                background-color: blue; \n                                opacity: 0.8;\n                                border: 1px solid black; \n                                border-radius: 4px;\n                                padding: 2px;\"\u003e\n                        Bus #1, Stop #6, Dropoff R8\n                    \u003c/div\u003e\n                    ", "iconAnchor": [0, 0], "iconSize": [250, 36]});
+            marker_639e1dfafd74b97b701a81803da2070c.setIcon(div_icon_402fbc004405fd2442bbf438e48b3337);
+        
+    
+            var marker_4a07460aac0b11d34ab1a854546a0203 = L.marker(
+                [30.14187214184873, -82.65045628360758],
+                {}
+            ).addTo(map_7e51c3edaccbe395ef3de5800f46f9d9);
+        
+    
+            var div_icon_e4e1db2feb215aa592ee815e75b5e312 = L.divIcon({"className": "empty", "html": "\n                    \u003cdiv style=\"font-size: 10pt; \n                                color: white; \n                                background-color: blue; \n                                opacity: 0.8;\n                                border: 1px solid black; \n                                border-radius: 4px;\n                                padding: 2px;\"\u003e\n                        Bus #1, Stop #7, Pickup R7\n                    \u003c/div\u003e\n                    ", "iconAnchor": [0, 0], "iconSize": [250, 36]});
+            marker_4a07460aac0b11d34ab1a854546a0203.setIcon(div_icon_e4e1db2feb215aa592ee815e75b5e312);
+        
+    
+            var marker_117f5457d9e92513cc3136ff319736ff = L.marker(
+                [30.146447603050174, -82.64961900435092],
+                {}
+            ).addTo(map_7e51c3edaccbe395ef3de5800f46f9d9);
+        
+    
+            var div_icon_e59af7bba144159523e46974c803f1cc = L.divIcon({"className": "empty", "html": "\n                    \u003cdiv style=\"font-size: 10pt; \n                                color: white; \n                                background-color: blue; \n                                opacity: 0.8;\n                                border: 1px solid black; \n                                border-radius: 4px;\n                                padding: 2px;\"\u003e\n                        Bus #1, Stop #8, Dropoff R5\n                    \u003c/div\u003e\n                    ", "iconAnchor": [0, 0], "iconSize": [250, 36]});
+            marker_117f5457d9e92513cc3136ff319736ff.setIcon(div_icon_e59af7bba144159523e46974c803f1cc);
+        
+    
+            var marker_5dc48056a31687ae2547945b4d64df1e = L.marker(
+                [30.15392046707516, -82.62959800688009],
+                {}
+            ).addTo(map_7e51c3edaccbe395ef3de5800f46f9d9);
+        
+    
+            var div_icon_3c0714e343fd2d6380d00c909be28b34 = L.divIcon({"className": "empty", "html": "\n                    \u003cdiv style=\"font-size: 10pt; \n                                color: white; \n                                background-color: blue; \n                                opacity: 0.8;\n                                border: 1px solid black; \n                                border-radius: 4px;\n                                padding: 2px;\"\u003e\n                        Bus #1, Stop #9, Pickup R10\n                    \u003c/div\u003e\n                    ", "iconAnchor": [0, 0], "iconSize": [250, 36]});
+            marker_5dc48056a31687ae2547945b4d64df1e.setIcon(div_icon_3c0714e343fd2d6380d00c909be28b34);
+        
+    
+            var marker_18e52d5572f3ffe940df57a702097c3c = L.marker(
+                [30.152751069316462, -82.60786900241534],
+                {}
+            ).addTo(map_7e51c3edaccbe395ef3de5800f46f9d9);
+        
+    
+            var div_icon_c7f47574a5a410400a8a3c2de699f59e = L.divIcon({"className": "empty", "html": "\n                    \u003cdiv style=\"font-size: 10pt; \n                                color: white; \n                                background-color: blue; \n                                opacity: 0.8;\n                                border: 1px solid black; \n                                border-radius: 4px;\n                                padding: 2px;\"\u003e\n                        Bus #1, Stop #10, Pickup R3 \u267f\n                    \u003c/div\u003e\n                    ", "iconAnchor": [0, 0], "iconSize": [250, 36]});
+            marker_18e52d5572f3ffe940df57a702097c3c.setIcon(div_icon_c7f47574a5a410400a8a3c2de699f59e);
+        
+    
+            var marker_ce95f6e740ca0709986b6ab5080b9808 = L.marker(
+                [30.145290570157403, -82.59783465338204],
+                {}
+            ).addTo(map_7e51c3edaccbe395ef3de5800f46f9d9);
+        
+    
+            var div_icon_6f09ea9f6cac3d516100fd8825d675ae = L.divIcon({"className": "empty", "html": "\n                    \u003cdiv style=\"font-size: 10pt; \n                                color: white; \n                                background-color: blue; \n                                opacity: 0.8;\n                                border: 1px solid black; \n                                border-radius: 4px;\n                                padding: 2px;\"\u003e\n                        Bus #1, Stop #11, Pickup R9 \ud83d\udeb2 \u267f\n                    \u003c/div\u003e\n                    ", "iconAnchor": [0, 0], "iconSize": [250, 36]});
+            marker_ce95f6e740ca0709986b6ab5080b9808.setIcon(div_icon_6f09ea9f6cac3d516100fd8825d675ae);
+        
+    
+            var marker_77fcb269c735dfaacf07fc74e559129e = L.marker(
+                [30.163427207745546, -82.59405869511114],
+                {}
+            ).addTo(map_7e51c3edaccbe395ef3de5800f46f9d9);
+        
+    
+            var div_icon_e98d50554061d7379804e0deb8eea450 = L.divIcon({"className": "empty", "html": "\n                    \u003cdiv style=\"font-size: 10pt; \n                                color: white; \n                                background-color: blue; \n                                opacity: 0.8;\n                                border: 1px solid black; \n                                border-radius: 4px;\n                                padding: 2px;\"\u003e\n                        Bus #1, Stop #12, Dropoff R7\n                    \u003c/div\u003e\n                    ", "iconAnchor": [0, 0], "iconSize": [250, 36]});
+            marker_77fcb269c735dfaacf07fc74e559129e.setIcon(div_icon_e98d50554061d7379804e0deb8eea450);
+        
+    
+            var marker_ae3f51e8cdf7dad8ff1898a5d14f57ab = L.marker(
+                [30.17741196779618, -82.59355663825384],
+                {}
+            ).addTo(map_7e51c3edaccbe395ef3de5800f46f9d9);
+        
+    
+            var div_icon_154f7484f2e9c2002d3c3ebcf89a6e2d = L.divIcon({"className": "empty", "html": "\n                    \u003cdiv style=\"font-size: 10pt; \n                                color: white; \n                                background-color: blue; \n                                opacity: 0.8;\n                                border: 1px solid black; \n                                border-radius: 4px;\n                                padding: 2px;\"\u003e\n                        Bus #1, Stop #13, Dropoff R10\n                    \u003c/div\u003e\n                    ", "iconAnchor": [0, 0], "iconSize": [250, 36]});
+            marker_ae3f51e8cdf7dad8ff1898a5d14f57ab.setIcon(div_icon_154f7484f2e9c2002d3c3ebcf89a6e2d);
+        
+    
+            var marker_494d16e1b2e53d2ce13517a23969a0a3 = L.marker(
+                [30.215125856509093, -82.59023610957647],
+                {}
+            ).addTo(map_7e51c3edaccbe395ef3de5800f46f9d9);
+        
+    
+            var div_icon_e12d67fa0491ef9ba9d02a9b9496fa69 = L.divIcon({"className": "empty", "html": "\n                    \u003cdiv style=\"font-size: 10pt; \n                                color: white; \n                                background-color: blue; \n                                opacity: 0.8;\n                                border: 1px solid black; \n                                border-radius: 4px;\n                                padding: 2px;\"\u003e\n                        Bus #1, Stop #14, Dropoff R2\n                    \u003c/div\u003e\n                    ", "iconAnchor": [0, 0], "iconSize": [250, 36]});
+            marker_494d16e1b2e53d2ce13517a23969a0a3.setIcon(div_icon_e12d67fa0491ef9ba9d02a9b9496fa69);
+        
+    
+            var marker_dcabbc7fdb53abd16a06de1cfe82ef8f = L.marker(
+                [30.23244008678326, -82.59787925370439],
+                {}
+            ).addTo(map_7e51c3edaccbe395ef3de5800f46f9d9);
+        
+    
+            var div_icon_e1b548f0c312598f52891671cd70e49b = L.divIcon({"className": "empty", "html": "\n                    \u003cdiv style=\"font-size: 10pt; \n                                color: white; \n                                background-color: blue; \n                                opacity: 0.8;\n                                border: 1px solid black; \n                                border-radius: 4px;\n                                padding: 2px;\"\u003e\n                        Bus #1, Stop #15, Dropoff R4\n                    \u003c/div\u003e\n                    ", "iconAnchor": [0, 0], "iconSize": [250, 36]});
+            marker_dcabbc7fdb53abd16a06de1cfe82ef8f.setIcon(div_icon_e1b548f0c312598f52891671cd70e49b);
+        
+    
+            var marker_d593adde37409b83f0952d820e50001e = L.marker(
+                [30.238754544786488, -82.6043991635824],
+                {}
+            ).addTo(map_7e51c3edaccbe395ef3de5800f46f9d9);
+        
+    
+            var div_icon_58d0bbf6e0079464d3a465fd2419fe03 = L.divIcon({"className": "empty", "html": "\n                    \u003cdiv style=\"font-size: 10pt; \n                                color: white; \n                                background-color: blue; \n                                opacity: 0.8;\n                                border: 1px solid black; \n                                border-radius: 4px;\n                                padding: 2px;\"\u003e\n                        Bus #1, Stop #16, Pickup R1\n                    \u003c/div\u003e\n                    ", "iconAnchor": [0, 0], "iconSize": [250, 36]});
+            marker_d593adde37409b83f0952d820e50001e.setIcon(div_icon_58d0bbf6e0079464d3a465fd2419fe03);
+        
+    
+            var marker_fe2222f91f39b4ac3b9fbce38447ffb7 = L.marker(
+                [30.234394384057428, -82.60875592626786],
+                {}
+            ).addTo(map_7e51c3edaccbe395ef3de5800f46f9d9);
+        
+    
+            var div_icon_3ca5f19112861cf6125397f603e21eac = L.divIcon({"className": "empty", "html": "\n                    \u003cdiv style=\"font-size: 10pt; \n                                color: white; \n                                background-color: blue; \n                                opacity: 0.8;\n                                border: 1px solid black; \n                                border-radius: 4px;\n                                padding: 2px;\"\u003e\n                        Bus #1, Stop #17, Pickup R6 \u267f\n                    \u003c/div\u003e\n                    ", "iconAnchor": [0, 0], "iconSize": [250, 36]});
+            marker_fe2222f91f39b4ac3b9fbce38447ffb7.setIcon(div_icon_3ca5f19112861cf6125397f603e21eac);
+        
+    
+            var marker_e09ecbb4f76dba056e2fcb907e0b737b = L.marker(
+                [30.22296397775954, -82.59998111938614],
+                {}
+            ).addTo(map_7e51c3edaccbe395ef3de5800f46f9d9);
+        
+    
+            var div_icon_71dfd7cb38e7fd0408ec85e43f39921c = L.divIcon({"className": "empty", "html": "\n                    \u003cdiv style=\"font-size: 10pt; \n                                color: white; \n                                background-color: blue; \n                                opacity: 0.8;\n                                border: 1px solid black; \n                                border-radius: 4px;\n                                padding: 2px;\"\u003e\n                        Bus #1, Stop #18, Dropoff R3\n                    \u003c/div\u003e\n                    ", "iconAnchor": [0, 0], "iconSize": [250, 36]});
+            marker_e09ecbb4f76dba056e2fcb907e0b737b.setIcon(div_icon_71dfd7cb38e7fd0408ec85e43f39921c);
+        
+    
+            var marker_df9bf153f186d9f9cc9a217a336484d5 = L.marker(
+                [30.212979852850467, -82.59602734609854],
+                {}
+            ).addTo(map_7e51c3edaccbe395ef3de5800f46f9d9);
+        
+    
+            var div_icon_7387323ddb9313d280b3410e5f94bb44 = L.divIcon({"className": "empty", "html": "\n                    \u003cdiv style=\"font-size: 10pt; \n                                color: white; \n                                background-color: blue; \n                                opacity: 0.8;\n                                border: 1px solid black; \n                                border-radius: 4px;\n                                padding: 2px;\"\u003e\n                        Bus #1, Stop #19, Dropoff R1\n                    \u003c/div\u003e\n                    ", "iconAnchor": [0, 0], "iconSize": [250, 36]});
+            marker_df9bf153f186d9f9cc9a217a336484d5.setIcon(div_icon_7387323ddb9313d280b3410e5f94bb44);
+        
+    
+            var marker_d81e98a1670c278e1486f92424b2fdcb = L.marker(
+                [30.170127418541878, -82.62777515283612],
+                {}
+            ).addTo(map_7e51c3edaccbe395ef3de5800f46f9d9);
+        
+    
+            var div_icon_97e5acecb67fd6b3a17836007924c272 = L.divIcon({"className": "empty", "html": "\n                    \u003cdiv style=\"font-size: 10pt; \n                                color: white; \n                                background-color: blue; \n                                opacity: 0.8;\n                                border: 1px solid black; \n                                border-radius: 4px;\n                                padding: 2px;\"\u003e\n                        Bus #1, Stop #20, Dropoff R9\n                    \u003c/div\u003e\n                    ", "iconAnchor": [0, 0], "iconSize": [250, 36]});
+            marker_d81e98a1670c278e1486f92424b2fdcb.setIcon(div_icon_97e5acecb67fd6b3a17836007924c272);
+        
+    
+            var marker_b8a9e2dab1b0ef7272b1aa11e8e0c3c3 = L.marker(
+                [30.190339032898677, -82.67642466538268],
+                {}
+            ).addTo(map_7e51c3edaccbe395ef3de5800f46f9d9);
+        
+    
+            var div_icon_ae806864104c63efa476963b4f436c1e = L.divIcon({"className": "empty", "html": "\n                    \u003cdiv style=\"font-size: 10pt; \n                                color: white; \n                                background-color: blue; \n                                opacity: 0.8;\n                                border: 1px solid black; \n                                border-radius: 4px;\n                                padding: 2px;\"\u003e\n                        Bus #1, Stop #21, Dropoff R6\n                    \u003c/div\u003e\n                    ", "iconAnchor": [0, 0], "iconSize": [250, 36]});
+            marker_b8a9e2dab1b0ef7272b1aa11e8e0c3c3.setIcon(div_icon_ae806864104c63efa476963b4f436c1e);
+        
+</script>
+</html>

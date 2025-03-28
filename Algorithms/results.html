@@ -1,0 +1,38 @@
+<html><head><title>Routing Results</title></head><body><h1>Routing Test Results</h1><p>Below are the aggregated metrics from our three case studies, each representing a distinct scenario in terms of number of requests, vehicles, and region size.</p><h2>Aggregated Metrics</h2><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Config</th>
+      <th>NumRequests</th>
+      <th>NumVehicles</th>
+      <th>RegionSize</th>
+      <th>distance_miles</th>
+      <th>sim_time_min</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Req10_Veh2_Reg0.05</td>
+      <td>10</td>
+      <td>2</td>
+      <td>0.05</td>
+      <td>31.837</td>
+      <td>63.674</td>
+    </tr>
+    <tr>
+      <td>Req20_Veh4_Reg0.1</td>
+      <td>20</td>
+      <td>4</td>
+      <td>0.10</td>
+      <td>102.360</td>
+      <td>204.720</td>
+    </tr>
+    <tr>
+      <td>Req30_Veh6_Reg0.2</td>
+      <td>30</td>
+      <td>6</td>
+      <td>0.20</td>
+      <td>210.445</td>
+      <td>420.890</td>
+    </tr>
+  </tbody>
+</table><h2>Comparison Chart (Basic)</h2><p>This bar chart compares total distance (left) and simulation time (right) across the scenarios. We see how the system scales with the number of requests and region size.</p><img src='grouped_comparison.png' alt='Grouped Bar Chart' style='max-width:800px;'><h2>Route Maps</h2><ul><li><a href='routes_Req10_Veh2_Reg0.05_20250328_105156.html' target='_blank'>Config: Req10_Veh2_Reg0.05</a> - View the Folium map for this scenario.</li><li><a href='routes_Req20_Veh4_Reg0.1_20250328_105232.html' target='_blank'>Config: Req20_Veh4_Reg0.1</a> - View the Folium map for this scenario.</li><li><a href='routes_Req30_Veh6_Reg0.2_20250328_105307.html' target='_blank'>Config: Req30_Veh6_Reg0.2</a> - View the Folium map for this scenario.</li></ul></body></html>

@@ -1,158 +1,108 @@
-Dial-a-Ride (DAR) Routing with OR-Tools
-=======================================
+GoEverywhere Rural Transportation Application
+=============================================
 
-This project demonstrates a **dial-a-ride** or **on-demand** transit algorithm using OR-Tools from Google. It features:
+Overview
+--------
 
--   **Wide Time Windows** to avoid infeasibility
--   **No Request Skipping** (all requests must be served)
--   **Accessibility Requirements** (bike/wheelchair) for both vehicles and passengers
--   **Multiple Vehicle** support, with the option to use one or many vehicles
+The GoEverywhere application is a dial‑a‑ride (DAR) solution aimed at improving rural transportation by optimizing ride routes using Google OR‑Tools. Our project is designed around three distinct case studies that differ in the number of ride requests, available vehicles, and geographic region size. This approach enables us to research how the system scales and how accessibility constraints (bike and wheelchair requests) affect performance.
 
-The code generates test scenarios, solves the routing problem, produces charts and tables for analysis, and saves interactive maps in HTML.
+### Case Study Descriptions
 
-* * * * *
+-   **Case Study A (Small Region):**
 
-1\. How the Algorithm Works
----------------------------
+    -   **Configuration:** 10 requests, 2 vehicles, region size ±0.05°
 
-1.  **Data Generation**
+    -   **Focus:** Examine performance with a low number of requests over a small area.
 
-    -   We create a set of requests (each request has a pickup location, dropoff location, time window, and potential accessibility needs like "needs_bike" or "needs_wheelchair").
-    -   We also create multiple vehicles, each with capacity and random capabilities (bike-capable, wheelchair-accessible).
-2.  **Routing Model (OR-Tools)**
+-   **Case Study B (Moderate Region):**
 
-    -   We use a **RoutingIndexManager** and **RoutingModel** to set up the problem.
-    -   **Pickup-and-Delivery** constraints ensure that each request's pickup happens before its dropoff on the same vehicle.
-    -   **Time Windows** ensure the pickup and dropoff happen within the allowed time range (though we made these windows wide to reduce infeasibility).
-    -   **Capacity Constraints** ensure vehicles do not exceed their passenger limit.
-    -   **Accessibility Constraints** ensure a passenger needing a bike/wheelchair can only be assigned to a vehicle that supports that feature.
-3.  **Search Parameters**
+    -   **Configuration:** 20 requests, 4 vehicles, region size ±0.1°
 
-    -   **First-Solution Strategy**: PATH_CHEAPEST_ARC
-    -   **Local-Search Metaheuristic**: GUIDED_LOCAL_SEARCH
-    -   **Time Limit**: 30 seconds (configurable)
-4.  **Solution Extraction**
+    -   **Focus:** Understand system behavior under typical conditions.
 
-    -   OR-Tools returns a solution specifying the route for each vehicle.
-    -   We calculate the total distance and approximate simulation time (assuming 30 mph average).
+-   **Case Study C (Large Region):**
 
-* * * * *
+    -   **Configuration:** 30 requests, 6 vehicles, region size ±0.2°
 
-2\. Test Scenarios & Results
-----------------------------
+    -   **Focus:** Stress test the algorithm with high demand and greater geographic spread.
 
-We tested **three scenarios** (see `TEST_CONFIGS` in code):
+For each scenario, the application randomly assigns ride pickup/dropoff locations and accessibility requirements, and vehicles are randomly designated as bike- and/or wheelchair-accessible.
 
-1.  **Req20_Veh4_Reg0.1**
-    -   20 requests
-    -   4 vehicles
-    -   Region size: ±0.1°
-2.  **Req30_Veh6_Reg0.2**
-    -   30 requests
-    -   6 vehicles
-    -   Region size: ±0.2°
-3.  **Req10_Veh2_Reg0.05**
-    -   10 requests
-    -   2 vehicles
-    -   Region size: ±0.05°
-
-### 2.1 High-Level Results
-
-Below is the raw table of results (distance in miles, sim_time in minutes):
-
-| Config | NumRequests | NumVehicles | RegionSize | distance_miles | sim_time_min |
-| --- | --- | --- | --- | --- | --- |
-| Req20_Veh4_Reg0.1 | 20 | 4 | 0.10 | 73.376 | 146.752 |
-| Req30_Veh6_Reg0.2 | 30 | 6 | 0.20 | 194.668 | 389.336 |
-| Req10_Veh2_Reg0.05 | 10 | 2 | 0.05 | 26.601 | 53.202 |
-
--   **Total Distance**: For each scenario, we sum the route distances for all vehicles.
--   **Simulation Time**: We assume 30 mph average speed, so `distance_miles / 30 * 60`.
-
-### 2.2 Basic Charts
-
-**Total Distance vs. Scenario** (left) and **Simulation Time vs. Scenario** (right):
-
-![Grouped Bar Chart](./Algorithms/grouped_comparison.png)
-
--   The scenario with 30 requests and region size 0.2 has the highest distance/time (as expected).
--   The smallest scenario (10 requests, 2 vehicles, region size 0.05) is the most compact.
-
-### 2.3 Additional Analysis
-
-The code also generates extra charts for deeper insights:
-
-1.  **Distance per Vehicle**
-2.  **Stops per Vehicle**
-3.  **Accessibility Demand vs. Supply**
-4.  **Distribution of Route Segment Distances**
-5.  **Load Over Route Order** (passenger count at each step)
-
-For example:
-
--   **Load Over Route Order**\
-    ![Load Over Route Order](./Algorithms/load_over_route.png)
-
--   **Distribution of Route Segment Distances**\
-    ![Segment Distance Histogram](./Algorithms/segment_distance_hist.png)
-
--   **Accessibility Demand vs. Supply**\
-    ![Accessibility Demand vs Supply](./Algorithms/accessibility_demand_vs_supply.png)
-
-These charts let us see how balanced the routes are, how far each vehicle travels, and whether the algorithm has enough bike/wheelchair-capable vehicles to meet demand.
-
-* * * * *
-
-3\. Map Visualization
+What the Results Show
 ---------------------
 
-The solution also generates interactive Folium maps (HTML files) showing each vehicle's route.
+Our analysis includes several charts:
 
--   **Always-Visible Labels**: We use `DivIcon` to show each stop's info without hovering.
--   **Bike/Wheelchair** icons: We add "🚲" or "♿" for pickups that need them.
+-   **Distance per Vehicle:** Displays how the total route distance is distributed among vehicles.
 
-**Example**:
+-   **Stops per Vehicle:** Shows the number of pickups/dropoffs per vehicle, indicating load balance.
 
-### Embedding Maps with IFrames
+-   **Accessibility Demand vs. Supply:** Compares the number of accessibility requests to the number of vehicles equipped to handle them.
 
-<h2>Routes for Req20_Veh4_Reg0.1</h2>
-<iframe src="Maps/routes_Req20_Veh4_Reg0.1_20250321_100928.html"
-        width="1000" height="600">
-</iframe>
+-   **Distribution of Route Segment Distances:** Highlights the lengths of individual route segments, revealing if rides are mostly short or if some are very long.
 
+-   **Load Over Route Order:** Illustrates how each vehicle's passenger load changes at each stop.
 
-4\. How to Run
---------------
+In addition, our Folium maps display the computed routes and, where possible, include turn‑by‑turn directions extracted via OSMnx (with a fallback to straight‑line paths if no route is found).
 
-1.  **Install Dependencies**
+How to Reproduce
+----------------
 
-    -   `pip install ortools folium osmnx networkx haversine matplotlib pandas`
-2.  **Run in a Jupyter Notebook**
+To reproduce the results, follow these steps:
 
-    -   Just open the `.ipynb` file (or paste the code) and run the cells.
-    -   The code automatically displays the maps inline if `IN_JUPYTER` is true.
-3.  **Run as a Python Script**
+1.  **Install Anaconda Navigator:**\
+    If you haven't already, download and install Anaconda Navigator.
 
-    -   `python main.py`
-    -   This will generate the maps as `.html` files, a `results.html` page, and a series of PNG charts.
+2.  **Open Anaconda Navigator and Launch JupyterLab:**
 
-* * * * *
+    -   Open Anaconda Navigator.
 
-5\. Future Improvements
------------------------
+    -   Click the "Launch" button under **JupyterLab**.
 
--   **Vehicle Usage Cost**: If we want to encourage using multiple vehicles, add a fixed cost per vehicle so the solver chooses more vehicles if it shortens overall routes.
--   **Time Window Slack**: We could measure how close pickups/dropoffs are to their time-window boundaries.
--   **Realistic Speeds/Delays**: We might factor in slower speeds or random traffic delays.
--   **Skipping with Penalties**: If we want partial coverage, reintroduce "skippable" requests with a penalty.
+3.  **Open the Notebook:**
 
-* * * * *
+    -   In JupyterLab, navigate to the folder containing the file **`DARP_LATEST.ipynb`**.
 
-6\. License & Contact
----------------------
+    -   Click to open the notebook.
 
--   **License**: [MIT]
--   **Author**: Paul VanMetre
--   **Contact**: pvanmetre2018@fau.edu
+4.  **Install Required Libraries:**\
+    Ensure you have the following Python packages installed. You can install them via Anaconda Prompt or within a Jupyter cell:
 
-Feel free to reach out with any questions or suggestions!
+    bash
+
+    Copy
+
+    `pip install ortools folium osmnx networkx haversine pandas matplotlib`
+
+    (If using conda, you might also use `conda install` where available.)
+
+5.  **Run All Cells:**
+
+    -   In JupyterLab, select **Run > Run All Cells** (or press Shift+Enter repeatedly).
+
+    -   The notebook will generate three distinct case studies, compute optimized routes, and create charts with descriptive explanations.
+
+    -   The Folium maps (saved as HTML files) are also generated and can be viewed inline.
+
+6.  **Review the Output:**
+
+    -   The notebook will print aggregated metrics for each scenario.
+
+    -   Multiple charts will be displayed, along with textual explanations of what each chart shows.
+
+    -   A results page (`results.html`) will be generated that summarizes the key metrics and provides links to the route maps.
+
+Summary
+-------
+
+This project demonstrates a scalable, accessible DAR solution for rural areas by analyzing three different scenarios. Our research focuses on:
+
+-   How route distance and simulation time scale with increased demand and area size.
+
+-   The balance of workload among vehicles.
+
+-   Whether the system's accessibility features meet the demands of riders.
+
+-   How individual route segments contribute to overall performance.
+
+By following the above steps, you can reproduce our experiments and explore the detailed analytics provided in the notebook.
