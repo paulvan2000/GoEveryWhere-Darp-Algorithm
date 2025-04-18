@@ -1,0 +1,42 @@
+<html><head><title>Routing Results</title></head><body><h1>Routing Test Results (Real Addresses)</h1><p>Below are the aggregated metrics from our three case studies, each representing a distinct scenario in terms of number of requests, vehicles, and region size, using real road network nodes and distances.</p><h2>Aggregated Metrics</h2><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Config</th>
+      <th>Place</th>
+      <th>NumRequests</th>
+      <th>NumVehicles</th>
+      <th>RegionSizeDeg</th>
+      <th>distance_miles</th>
+      <th>sim_time_min</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>LakeCity_Req10_Veh2_Reg8</td>
+      <td>Lake City, Florida, USA</td>
+      <td>10</td>
+      <td>2</td>
+      <td>0.08</td>
+      <td>22.429</td>
+      <td>0.747883</td>
+    </tr>
+    <tr>
+      <td>LakeCity_Req20_Veh4_Reg15</td>
+      <td>Lake City, Florida, USA</td>
+      <td>20</td>
+      <td>4</td>
+      <td>0.15</td>
+      <td>29.756</td>
+      <td>0.992217</td>
+    </tr>
+    <tr>
+      <td>LakeCity_Req30_Veh6_Reg25</td>
+      <td>Lake City, Florida, USA</td>
+      <td>30</td>
+      <td>6</td>
+      <td>0.25</td>
+      <td>47.099</td>
+      <td>1.570383</td>
+    </tr>
+  </tbody>
+</table><h2>Comparison Chart (Basic)</h2><p>This bar chart compares total network distance (left) and simulation time (right) across the scenarios. We see how the system scales with the number of requests and region size using road network calculations.</p><img src='grouped_comparison_real_addresses.png' alt='Grouped Bar Chart' style='max-width:800px;'><h2>Route Maps</h2><ul><li><a href='routes_LakeCity_Req10_Veh2_Reg8_20250418_085015.html' target='_blank'>Config: LakeCity_Req10_Veh2_Reg8</a> - View the Folium map for this scenario (routes follow roads).</li><li><a href='routes_LakeCity_Req20_Veh4_Reg15_20250418_085118.html' target='_blank'>Config: LakeCity_Req20_Veh4_Reg15</a> - View the Folium map for this scenario (routes follow roads).</li><li><a href='routes_LakeCity_Req30_Veh6_Reg25_20250418_085224.html' target='_blank'>Config: LakeCity_Req30_Veh6_Reg25</a> - View the Folium map for this scenario (routes follow roads).</li></ul></body></html>
