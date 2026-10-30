@@ -1,0 +1,10 @@
+# Original notebook dependencies. Versions are intentionally not claimed as
+# validated; establish and freeze a working environment before reproducing results.
+ortools
+folium
+osmnx
+networkx
+pandas
+matplotlib
+numpy
+jupyterlab

@@ -1,3 +1,5 @@
+**Start here:** Read the [project guide](PROJECT_GUIDE.md) for the canonical notebook, dependencies, and experiment limitations.
+
 # GoEverywhere Rural Transportation Application
 =============================================
 
